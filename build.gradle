@@ -1,0 +1,22 @@
+buildscript {
+    repositories {
+        maven {
+            //引入本地仓库
+            url uri('../repo')
+        }
+    }
+    dependencies {
+        //添加依赖
+        classpath group: 'org.gradle', name: 'customPlugin',
+                version: '1.0-SNAPSHOT'
+    }
+}
+
+// 应用自定义插件
+apply plugin: 'hello'
+
+// 为插件传递参数
+para{
+    first = 'Hello'
+    last = ' world'
+}
